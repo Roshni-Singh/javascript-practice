@@ -1,0 +1,180 @@
+//Variable Declarations with Const and Let
+/*
+
+var name = 'Jane';
+var title = 'Software Engineer';
+var hourlyWage = 40;
+
+//change to const or let below
+
+const name = 'Jane';
+let title = 'Software Engineer';
+let hourlyWage = 40;
+
+
+
+//Template Strings
+
+//One Way:
+function getMessage() {
+  const year = new Date().getFullYear();
+
+  return "The year is " + year;
+}
+
+getMessage(); 
+
+//2nd Way (with back tick next to 1 on keyboard)
+
+function getMessage() {
+  return `The year is ${new Date().getFullYear()}`;
+}
+
+getMessage();
+
+
+
+//When to reach certain Strings; Convert PHP to easy to read string for JS
+
+//PHP
+//$data = '{"device_id":"'.$device_id.'","guid":"'.$guid.'","username":"'.$username.'",'"}';
+
+const device_id = 4;
+const guid = 20;
+const username = "hello";
+
+const data = `{"device_id":"${device_id}","guid":" ${guid}","username":" ${username}","}`;
+data
+
+
+
+const year = 2016;
+const yearMessage = `${year}`;
+console.log(yearMessage);
+
+
+
+//Make two names = full name
+
+function fullName(firstName, lastName) {
+    return `${firstName} ${lastName}`;
+}
+
+//Fat Arrow
+
+const add = (a,b) => {
+  return a + b;
+}
+
+add(1,2);
+
+
+const double = (number1, number2) => {
+  return 2 * number1 + 2 * number2;
+};
+double(8,4);
+
+
+//another example
+
+const numbers = [1,2,3];
+
+console.log(numbers.map(number => 2* number));
+
+
+//When to use fat arrow
+//This doesn't mess up a lot when you use an arrow(see below)
+const team = {
+  members: ['Jane', 'Bill'],
+  teamName: 'Super Squad',
+  teamSummary: function () {
+    return this.members.map((member) => {
+      return `${member} is on team ${this.teamName}`;
+    });
+  }
+};
+team.teamSummary();
+
+
+
+//Enhanced Object Literals
+//Example 1:
+
+function createBookShop(inventory) {
+  return {
+    inventory,
+    inventoryValue() {
+      return this.inventory.reduce((total, book) => total + book.price, 0);
+    },
+    priceForTitle(title) {
+      return this.inventory.find(book => book.title === title).price;
+    }
+  };
+}
+
+const inventory = [
+  { title: 'Harry Potter', price: 10},
+  { title: 'Elequent javascript', price: 15 }
+];
+
+const bookShop = createBookShop(inventory);
+
+bookShop.inventoryValue();
+bookShop.priceForTitle('Harry Potter');
+
+//Example 2
+
+function saveFile(url, data) {
+  $.ajax({ 
+    url, 
+    data, 
+    method: 'POST' 
+  });
+}
+
+const url = "http://fileupload.com";
+const data = { color: 'red' };
+
+saveFile(url, data);
+
+//Example 3
+
+var width = 123;
+
+var obj = {
+    width,
+    newWidth: width * 24
+};
+
+
+
+//Default Function Arguments
+
+function makeAjaxRequest(url, method = 'GET') {
+  return method;
+  //logic to make the request
+}
+
+makeAjaxRequest('google.com', undefined);
+makeAjaxRequest('google.com', 'POST');
+
+//Another Example
+
+function User(id) {
+  this.id = id;
+}
+
+function generateId() {
+  return Math.random * 9999999;
+}
+
+function createAdminUser(user = new User(generateId())) {
+  user.admin = true;
+
+  return user;
+}
+
+const user = new User(generateId());
+createAdminUser(user);
+
+*/

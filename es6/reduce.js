@@ -81,5 +81,17 @@ var b = a++;
 console.log(b);
 console.log(a);
 
+
+
+var numbers = [1, 2, 3, 4, 5];
+
+var summed = numbers.reduce(function (finalSum, currentNum) {
+    var nextNum = finalSum += currentNum;
+
+    return nextNum;
+}, 0);
+
+console.log(summed);
+
 */
 
